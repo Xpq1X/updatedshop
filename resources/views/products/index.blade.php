@@ -86,7 +86,7 @@
                                         </form>
 
                                         <!-- Link to go to cart page -->
-                                        <a href="{{ route('cart.index') }}" class="px-4 py-2 bg-green-500 text-white rounded-md ml-2">Přejít do košíku</a>
+                                        <a href="{{ route('cart.index') }}" class="px-4 py-2 bg-green-500 text-white rounded-md ml-2" onclick="addProductAndGoToCart({{ $product->id }})">Přejít do košíku</a>
                                     </div>
                                 </div>
                             </div>
@@ -109,12 +109,26 @@
                     box.classList.add('hidden');
                 }
             });
+        }
 
-            // Když uživatel klikne na "Přejít do košíku"
-            var goToCartLink = document.querySelector('#confirmation-box-' + productId + ' a');
-            goToCartLink.onclick = function() {
-                window.location.href = goToCartLink.href;
-            };
+        // Funkce pro přidání produktu do košíku a přesměrování na košík
+        function addProductAndGoToCart(productId) {
+            // Poslat AJAX požadavek pro přidání do košíku
+            fetch("{{ route('cart.add', '') }}/" + productId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ product_id: productId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Přejít na košík
+                    window.location.href = "{{ route('cart.index') }}";
+                }
+            });
         }
     </script>
 @endsection
