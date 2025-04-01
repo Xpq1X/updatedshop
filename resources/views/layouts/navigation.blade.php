@@ -111,6 +111,8 @@
             <x-responsive-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
                 {{ __('Contact') }}
             </x-responsive-nav-link>
+          
+            
         </div>
         
         <!-- Responsive Settings Options -->

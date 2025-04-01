@@ -9,6 +9,7 @@
         "blade-ui-kit/blade-heroicons": "^2.5",
         "codeat3/blade-google-material-design-icons": "^1.19",
         "filament/filament": "^3.0-stable",
+        "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "livewire/flux": "^2.0",
