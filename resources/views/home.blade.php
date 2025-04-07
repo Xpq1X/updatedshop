@@ -6,6 +6,17 @@
 <div class="relative h-screen mt-20 bg-gradient-to-b from-indigo-700 to-indigo-900 font-gambetta">
     <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50"></div>
     <div class="flex items-center justify-center h-full text-center">
+        <!-- 3D Model Viewer inside Hero -->
+        <model-viewer 
+    src="{{ asset('models/Model7Pokoj.glb') }}" 
+    alt="Robot Model" 
+    auto-rotate 
+    camera-controls 
+    ar 
+    style="width: 600px; height: 500px; ">
+    <p>Svička</p>
+</model-viewer>
+
     </div>
 </div>
 
@@ -18,12 +29,14 @@
 @include('components.product-slider')
 @include('components.reviews')
 
-
-
 @endsection
 
 @push('styles')
 <style>
+
+
+
+
     #chat-container {
         position: fixed;
         bottom: 20px;
@@ -87,6 +100,10 @@
 @endpush
 
 @push('scripts')
+<!-- Load Model Viewer library -->
+<script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" type="module"></script>
+
+<!-- Chatbox script -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function sendMessage() {

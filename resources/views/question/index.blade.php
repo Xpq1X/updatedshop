@@ -37,7 +37,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                chatBox.innerHTML += `<p><strong>AI:</strong> Oops! Something went wrong.</p>`;
+                chatBox.innerHTML += `<p><strong>AI:</strong> Fuck off.</p>`;
             });
         }
     </script>
