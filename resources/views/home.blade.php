@@ -6,6 +6,7 @@
 <div class="relative h-screen mt-20 bg-gradient-to-b from-indigo-700 to-indigo-900 font-gambetta">
     <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50"></div>
     <div class="flex items-center justify-center h-full text-center">
+        <h1 class="font-gambetta text-4xl font-semibold text-gray-800">Lhota Shop</h1>
         <!-- 3D Model Viewer inside Hero -->
         <model-viewer 
     src="{{ asset('models/Model7Pokoj.glb') }}" 
@@ -14,7 +15,7 @@
     camera-controls 
     ar 
     style="width: 600px; height: 500px; ">
-    <p>Svička</p>
+    <p class="font-gambetta text-4xl font-semibold text-gray-800">Svička</p>
 </model-viewer>
 
     </div>
